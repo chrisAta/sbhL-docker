@@ -56,7 +56,5 @@ RUN cd /opt/synbiohub-lab && \
     yarn install || : && \
     tsc -d -p ./ --outDir dist/ || :
 
-RUN yarn add sqlite3
-
 COPY run.sh /opt/synbiohub-lab/run.sh
-# CMD bash ./run.sh
+CMD bash ./run.sh

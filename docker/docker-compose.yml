@@ -11,14 +11,18 @@ services:
             - ./data/virtuoso:/data
         ports:
             - "8890:8890"
+            - "1111:1111"
         networks:
             - sbhWeb
 
     synbiohub-lab:
         build: .
         image: sbh-l
+        volumes:
+          - ./sbh_data:/opt/synbiohub-lab/data
+          - ./config.json:/opt/synbiohub-lab/config.local.json
         ports:
-            - 0.0.0.0:7777:7777
+            - "0.0.0.0:7777:7777"
         networks:
             - sbhWeb
         working_dir: "/opt/synbiohub-lab"

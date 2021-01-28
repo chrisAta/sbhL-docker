@@ -1,0 +1,81 @@
+{
+  "firstLaunch": true,
+  "instanceName": "SynBioHub",
+  "instanceUrl": "http://synbiohub.org/",
+  "instanceLogo": "",
+  "javaPath": "java",
+  "theme": "default",
+  "themeParameters": {
+      "default": {
+      }
+  },
+  "webOfRegistriesUrl" : "https://wor.synbiohub.org",
+  "port": 7777,
+  "triplestore": {
+      "sparqlEndpoint": "http://db:8890/sparql",
+      "graphStoreEndpoint": "http://db:8890/sparql-graph-crud-auth/",
+      "defaultGraph": "http://synbiohub.org/public",
+      "graphPrefix": "http://synbiohub.org/",
+      "username": "dba",
+      "password": "dba",
+      "virtuosoINI": "/etc/virtuoso-opensource-7/virtuoso.ini",
+      "virtuosoDB": "/var/lib/virtuoso-opensource-7/db",
+      "isql": "isql-vt"
+  },
+  "databasePrefix": "http://synbiohub.org/",
+  "sessionSecret": "synbiohub_change_me",
+  "shareLinkSalt": "synbiohub_change_me",
+  "passwordSalt": "synbiohub_change_me",
+  "requireCompliant": false,
+  "requireComplete": false,
+  "requireBestPractice": false,
+  "removePublicEnabled": false,
+  "namespaces" : {
+        "xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "xmlns:dcterms": "http://purl.org/dc/terms/",
+        "xmlns:dc": "http://purl.org/dc/elements/1.1/",
+	"xmlns:sbh": "http://wiki.synbiohub.org/wiki/Terms/synbiohub#",
+        "xmlns:prov": "http://www.w3.org/ns/prov#",
+        "xmlns:sbol": "http://sbols.org/v2#",
+        "xmlns:xsd": "http://www.w3.org/2001/XMLSchema#",
+        "xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+	"xmlns:purl": "http://purl.obolibrary.org/obo/"
+  },
+  "webOfRegistries" : {
+  },
+  "uploadLimit": "150mb",
+  "resolveBatch": 20,
+  "staggeredQueryLimit": 10000,
+  "mail": {
+      "sendgridApiKey": "",
+      "fromAddress": "foo@example.com"
+  },
+  "collectionIcons": {
+      "http://synbiohub.org/public/igem/igem_collection/1": "/local/igem.png",
+      "http://synbiohub.org/public/eco/eco_collection/1": "/local/ekb.png",
+      "http://synbiohub.org/public/bsu/bsu_collection/1": "/local/bsu.png",
+      "http://synbiohub.org/public/jbei/jbei_collection/current": "/local/jbeir_public.png",
+      "http://synbiohub.org/public/acs/acs_collection/current": "/local/acs.png",
+      "http://synbiohub.org/public/cidar_ice/cidar_ice_collection/current": "/local/cidar.png"
+  },
+  "experimental": {
+      "dataIntegration": false
+  },
+  "fileExtensionToAttachmentType": {
+      "png": "http://wiki.synbiohub.org/wiki/Terms/synbiohub#imageAttachment"
+  },
+  "attachmentTypeToMimeType": {
+      "http://wiki.synbiohub.org/wiki/Terms/synbiohub#imageAttachment": "image/png"
+  },
+  "attachmentTypeToTypeName": {
+      "http://wiki.synbiohub.org/wiki/Terms/synbiohub#imageAttachment": "Image"
+  },
+  "iceMaxRetries": 10,
+  "iceRetryDelay": 500,
+  "remotes": {
+  },
+  "defaultLimit": 10,
+  "frontPageText": "<a href=\"/About\">SynBioHub Lab</a> is a whole-lifecycle <i>metadata repository</i> for synthetic biology.  It enables information about designs, constructs, and experiments to be uploaded, shared, and searched by laboratories around the world.",
+  "allowPublicSignup": true,
+  "fmaprefixPath": "bin/fmaprefix"
+}
