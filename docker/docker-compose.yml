@@ -16,8 +16,7 @@ services:
             - sbhWeb
 
     synbiohub-lab:
-        build: .
-        image: sbh-l
+        image: chrisata/sbh-l:latest
         volumes:
           - ./sbh_data:/opt/synbiohub-lab/data
           - ./config.json:/opt/synbiohub-lab/config.local.json
