@@ -16,9 +16,10 @@ RUN git clone https://github.com/udp/bioterms.git && \
     git clone https://github.com/udp/sbolgraph.git && \
     git clone https://github.com/SynBioCAD/biocad.git && \
     git clone https://github.com/SynBioCAD/jfw.git && \
-    git clone https://github.com/SynBioHub/synbiohub-lab.git
+    git clone https://github.com/SynBioHub/synbiohub-lab.git && \
+    git clone https://github.com/udp/fmaprefix.git
 
-RUN mv -t /opt bioterms sbolgraph biocad jfw synbiohub-lab
+RUN mv -t /opt bioterms sbolgraph biocad jfw synbiohub-lab fmaprefix
 
 RUN cd /opt/bioterms && \
     git checkout ce0b8b4d93e164867d5eee63ca805b6819ee22a9 && \
@@ -55,6 +56,11 @@ RUN cd /opt/synbiohub-lab && \
     yarn link @biocad/biocad && \
     yarn install || : && \
     tsc -d -p ./ --outDir dist/ || :
+
+RUN cd /opt/fmaprefix && \
+    gcc ./fmaprefix.c && \
+    mv ./a.out ./fmaprefix && \
+    cp ./fmaprefix ../synbiohub-lab/bin
 
 COPY run.sh /opt/synbiohub-lab/run.sh
 CMD bash ./run.sh
