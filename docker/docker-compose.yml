@@ -20,6 +20,8 @@ services:
         volumes:
           - ./sbh_data:/opt/synbiohub-lab/data
           - ./config.json:/opt/synbiohub-lab/config.local.json
+          - ./attachments:/opt/synbiohub-lab/uploads
+          - ./tmp:/tmp
         ports:
             - "0.0.0.0:7777:7777"
         networks:
